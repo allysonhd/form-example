@@ -3,7 +3,7 @@ const form = document.getElementById("contact-form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const name = document.getElementById("Name").value.trim();
+  const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
@@ -14,7 +14,7 @@ form.addEventListener("submit", function (event) {
     alert("Please fill out all required fields before submitting. Thanks!");
   }
 
-  const textarea = document.getElementById("textarea");
+  const textarea = document.getElementById("message");
 
   textarea.addEventListener("input", function () {
     this.style.height = "auto";

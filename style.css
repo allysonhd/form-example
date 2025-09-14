@@ -6,17 +6,19 @@ body {
   font-family: Arial, sans-serif;
   background: #ffffff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 16px;
 }
 
 form {
   background: white;
   padding: 20px;
-  border-radius: 1px;
+  border-radius: 1%;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: auto;
+  width: min(100%, 420px);
 }
 
 form h2 {
@@ -33,8 +35,8 @@ input {
   border-radius: 4px;
 }
 
-input:focus,
-textarea:focus {
+input:focus-visible,
+textarea:focus-visible {
   outline: none;
   border: 2px solid #cf0a2c;
   box-shadow: 0 0 4px rgba(207, 10, 44, 0.5);
@@ -63,4 +65,53 @@ button {
 
 button:hover {
   background: #b90020;
+}
+
+.shoe {
+  width: (100%, 420px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.shoe img {
+  width: min(100%, 420px);
+  height: auto;
+  display: block;
+  margin: 0 auto 32px;
+  border-radius: 1%;
+}
+
+/* keep the reset */
+.like-button,
+.like-button:hover,
+.like-button:focus,
+.like-button:active {
+  display: block;
+  margin-left: auto;
+  margin-top: 8px;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.like-button i {
+  color: #888;
+  font-size: 20px;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.like-button:hover i,
+.like-button:focus i {
+  color: #cf0a2c;
+}
+
+.like-button:active i {
+  transform: scale(0.92);
+}
+
+.like-button.liked i {
+  color: #cf0a2c;
 }

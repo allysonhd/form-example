@@ -4,22 +4,47 @@
     <meta charset="UTF-8" />
     <title>Form Example</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   </head>
-  <div>
   <body>
-    <form id="contact-form">
+    <div class="shoe">
+      <img
+        src="https://nb.scene7.com/is/image/NB/u9060etn_nb_02_i?$pdpflexf2SM2x$&qlt=80&fmt=webp&wid=726&hei=726" alt="image of New Balance 9060 shoe color is Earth Shadow with Flat Taupe and Bisque "></img>
+    </div>
+    <div>
+      <button id="like" class="like-button">
+        <i class="fa fa-heart-o"></i>
+      </button>
+    </div>
+    <br></br>
+    <form id="contact-form" action="/handle-form-page" method="post">
       <h2>Contact Us</h2>
-
+    <p>
       <label for="name">Name</label>
-      <input type="text" id="name" name="Name" required />
- 
-
+      <input type="text" id="name" name="user_name"/>
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="text" id="email"/>
+    </p>
+    <p>
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6"></textarea>
-  
+      <textarea id="message" name="user_message" rows="6"></textarea>
+    </p>
       <button type="submit">Submit Form</button>
-
     </form>
-</body>
-    <script src="script.js"></script>
+    <script>
+      const btn = document.getElementById('like');
+      btn.addEventListener('click', () => {
+        const icon = btn.querySelector('i');
+        icon.classList.toggle('fa-heart-o');
+        icon.classList.toggle('fa-heart');
+        btn.classList.toggle('liked');
+      });
+    </script>    
+  </body>
+  <script src="script.js"></script>
 </html>
